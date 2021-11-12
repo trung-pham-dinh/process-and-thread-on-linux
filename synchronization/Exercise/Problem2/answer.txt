@@ -1,0 +1,8 @@
+1.
+	nosynch.c does not display the "count" in ordered while the cond_usg.c does. Because there is a case that 1 thread is executing "count++" while there is another thread try to print out the "count"
+	In cond_usg.c, we want to plus 80 to the "count" when the it reaches 20. In nosynch, without condition variable, the watch_count() will immediately add 80 to the "count" as long as the it hasnt reached the COUNT_LIMIT.
+	But the final value of "count" is the same for syn and nosyn(this may depend on how the computer handle the count++ statement, dóe it separate read "count" and assign "count")
+2.
+	count_mutex is used for prevent multiple threads change the "count" at the same time. Therefore, the "count" increases correctly
+	count_threshold_cv is used for block the execution of thread "watch_count()" until there is a signal from another thread(or until the count == COUNT_LIMIT)
+

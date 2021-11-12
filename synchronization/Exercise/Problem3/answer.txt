@@ -1,0 +1,1 @@
+With mutex or semaphore, the result of will be more accurate than without synchronization. The speed also greatly increase when use mutex and semaphore
