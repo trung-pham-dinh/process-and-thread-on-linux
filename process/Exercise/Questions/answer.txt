@@ -1,0 +1,12 @@
+1. 
+	Makefile helps us to compile codes quickly. It just compiles files which are really needed to compile with the help of dependencies. Therefore, it reduce the time consume when we compile code. Beside that it helps us to easily manage files of code.
+	Example: 
+		We have about hundreds of source file need to compile, we cannot always run command for all of these file(time consuming).
+		If our main.c include some library and 2 files A.h, B.h. When A.h changes, we just have to recompile A.c, not all the source files and library. We can manage this by setting rules in Makefile.
+
+2. 
+	The first solution is to specify a full path of all the files(targets, dependencies). We can also use Macro for the path to the folder.
+	The second solution is to have the "cd" command before every compile command in the rules, so we first cd to the folder which contains source files and then compile them.
+
+3.
+	output of LINE A is: "PARENT: value = 5". Because the LINE A is currently executed by the parent process, so the "value += 15" line in the child process will not affect. Means that there are 2 copies of variable "value"
